@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>ASCII Art</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+   <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    body {
+      padding-top: 5rem;
+    }
+    .starter-template {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+  </style>
+ </head>
+ <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">ASCII Art</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            </li>
+            </ul>
+            
+        </div>
+    </nav>
+        
+    <main role="main" class="container">
+        {% block content %}
+        {% endblock %}        
+    </main><!-- /.container -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js">
+    </script>
+
+    
+    
+    
+ </body>
+</html>
