@@ -2,7 +2,7 @@ import logging
 
 from dotenv import load_dotenv
 
-from modules.bannerwriter import app, celery
+from modules.bannerwriter import app
 
 load_dotenv()
 
