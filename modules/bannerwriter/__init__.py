@@ -69,14 +69,10 @@ def taskstatus(task_id):
     if task.state == 'SUCCESS':
         response = task.info.get('art', None)
     else:
-        # something went wrong in the background job
+        # in other cases
         response = jsonify({
             'text': task.info.get('text', None),
             'state': task.state,
-            # 'file': task.info.get('fileName'),
-            # 'status': task.info.get('status', None),
-            # this is the exception raised
-            # 'error': task.info.get('error', None)
         })
     return response, 201, {'Content-Type': 'text/plain'}
 
