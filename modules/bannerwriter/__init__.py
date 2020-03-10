@@ -22,8 +22,6 @@ app = Flask(__name__, template_folder="../../resources/templates",
 app.config['SECRET_KEY'] = '\xf0\x9524"C\xa2\xdd\xac\xc6\xa2O\t\xaf\x0bA\x96,5\xe5r\x96\x99\xc8'
 
 # Celery Configuration
-app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
-app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
 
 celery = Celery(app.name, backend='rpc://', broker='pyamqp://')#broker=app.config['CELERY_BROKER_URL'])
 celery.conf.update(app.config)
@@ -88,7 +86,7 @@ def generate_art_task(self, text):
         self.update_state(state='PROGRESS', meta=meta_info)
 
         ascii_banner = pyfiglet.figlet_format(text)
-        time.sleep(5)
+        time.sleep(10)
         result = {
             "text": text,
             "art": ascii_banner
