@@ -9,4 +9,3 @@ Werkzeug==0.12.2
 celery==4.4.0
 pyfiglet==0.8.post1
 requests==2.22.0
-redis==3.4.1
